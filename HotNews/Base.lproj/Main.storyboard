@@ -1,24 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lvr-W4-eye">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Новости-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ListNewsViewController" customModule="HotNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I00-cv-Vgy">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Db-kP-zQh">
+                                    <size key="itemSize" width="372" height="392"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellNews" id="0MN-gl-9nn" customClass="NewsCollectionViewCell" customModule="HotNews" customModuleProvider="target">
+                                        <rect key="frame" x="10.666666666666666" y="10" width="372" height="392"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="372" height="392"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VQI-ZX-xuk">
+                                                    <rect key="frame" x="8" y="8" width="356" height="207"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" id="M65-5C-NdV">
+                                                    <rect key="frame" x="8" y="223" width="356" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News publication date" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k5C-nT-5nr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="306.33333333333331" height="25"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dDy-0T-b5j">
+                                                            <rect key="frame" x="306.33333333333331" y="-1.6666666666666679" width="49.666666666666686" height="29.333333333333336"/>
+                                                            <color key="tintColor" systemColor="systemPinkColor"/>
+                                                            <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                                            <imageReference key="highlightedImage" image="heart.fill" catalog="system" symbolScale="large"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline news" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0wi-F2-z0C">
+                                                    <rect key="frame" x="8" y="268" width="356" height="20.333333333333314"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Text news Text news Text news Text news Text news Text news Text news Text news Text news Text news Text news " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zT0-J6-EeI">
+                                                    <rect key="frame" x="8" y="292.33333333333331" width="356" height="58"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="M65-5C-NdV" firstAttribute="trailing" secondItem="VQI-ZX-xuk" secondAttribute="trailing" id="Drp-rd-JFF"/>
+                                            <constraint firstItem="VQI-ZX-xuk" firstAttribute="leading" secondItem="0MN-gl-9nn" secondAttribute="leading" constant="8" id="ISX-wN-bgV"/>
+                                            <constraint firstAttribute="trailing" secondItem="0wi-F2-z0C" secondAttribute="trailing" constant="8" id="Klu-2f-dbR"/>
+                                            <constraint firstItem="0wi-F2-z0C" firstAttribute="leading" secondItem="0MN-gl-9nn" secondAttribute="leading" constant="8" id="N6Y-4k-JbE"/>
+                                            <constraint firstItem="zT0-J6-EeI" firstAttribute="top" secondItem="0wi-F2-z0C" secondAttribute="bottom" constant="4" id="VbN-ND-fCB"/>
+                                            <constraint firstItem="M65-5C-NdV" firstAttribute="top" secondItem="VQI-ZX-xuk" secondAttribute="bottom" constant="8" symbolic="YES" id="csL-bF-PYX"/>
+                                            <constraint firstItem="0wi-F2-z0C" firstAttribute="top" secondItem="M65-5C-NdV" secondAttribute="bottom" constant="20" id="dKZ-eD-kXv"/>
+                                            <constraint firstItem="VQI-ZX-xuk" firstAttribute="top" secondItem="0MN-gl-9nn" secondAttribute="top" constant="8" id="gdy-dQ-X5w"/>
+                                            <constraint firstAttribute="trailing" secondItem="zT0-J6-EeI" secondAttribute="trailing" constant="8" id="h1H-z9-XaX"/>
+                                            <constraint firstAttribute="trailing" secondItem="VQI-ZX-xuk" secondAttribute="trailing" constant="8" id="jYF-gh-o3A"/>
+                                            <constraint firstItem="M65-5C-NdV" firstAttribute="leading" secondItem="VQI-ZX-xuk" secondAttribute="leading" id="k9b-6y-Px0"/>
+                                            <constraint firstItem="zT0-J6-EeI" firstAttribute="leading" secondItem="0MN-gl-9nn" secondAttribute="leading" constant="8" id="ym1-uA-6f3"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zT0-J6-EeI" secondAttribute="bottom" constant="8" id="z8R-mR-347"/>
+                                        </constraints>
+                                        <size key="customSize" width="372" height="392"/>
+                                        <connections>
+                                            <outlet property="newsHeadlineLabel" destination="0wi-F2-z0C" id="4Gg-eb-nYd"/>
+                                            <outlet property="newsImageView" destination="VQI-ZX-xuk" id="9BQ-XX-ffM"/>
+                                            <outlet property="newsLikeImageView" destination="dDy-0T-b5j" id="GQQ-Z7-SeJ"/>
+                                            <outlet property="newsPublicationDateLabel" destination="k5C-nT-5nr" id="P47-pZ-ys4"/>
+                                            <outlet property="newsTextLabel" destination="zT0-J6-EeI" id="MHA-x0-Wwp"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="I00-cv-Vgy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Iuy-eG-AvN"/>
+                            <constraint firstItem="I00-cv-Vgy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KLH-Za-jW5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I00-cv-Vgy" secondAttribute="trailing" id="NlB-4r-LHl"/>
+                            <constraint firstItem="I00-cv-Vgy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aEZ-Ls-BE2"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Новости" id="SV0-M4-877">
+                        <barButtonItem key="backBarButtonItem" title=" " id="qwL-Ws-rCz"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="newsCollectionView" destination="I00-cv-Vgy" id="xZk-DP-cjB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="762.59541984732823" y="13.380281690140846"/>
+        </scene>
+        <!--Статья-->
+        <scene sceneID="dHT-SM-4HO">
+            <objects>
+                <viewController storyboardIdentifier="selectNewsViewController" id="aCp-4d-OlO" customClass="SelectNewsViewController" customModule="HotNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x39-f2-ANg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAo-px-80u">
+                                <rect key="frame" x="16" y="59" width="361" height="317"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" id="FR8-Re-8aJ">
+                                <rect key="frame" x="16" y="384" width="361" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News publication date" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydr-47-1OQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="310.66666666666669" height="49"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HgY-GQ-7ai">
+                                        <rect key="frame" x="310.66666666666669" y="-1.6666666666666679" width="50.333333333333314" height="53.333333333333343"/>
+                                        <color key="tintColor" systemColor="systemPinkColor"/>
+                                        <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                        <imageReference key="highlightedImage" image="heart.fill" catalog="system" symbolScale="large"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline news" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0Z-34-rq5">
+                                <rect key="frame" x="16" y="453" width="361" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text news Text news Text news Text news Text news Text news Text news Text news Text news Text news Text news " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QEL-AG-C1K">
+                                <rect key="frame" x="16" y="477.33333333333331" width="361" height="57.999999999999943"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="erl-jK-oKX"/>
+                        <color key="backgroundColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="QEL-AG-C1K" firstAttribute="top" secondItem="p0Z-34-rq5" secondAttribute="bottom" constant="4" id="5EM-zn-BZX"/>
+                            <constraint firstItem="FR8-Re-8aJ" firstAttribute="trailing" secondItem="cAo-px-80u" secondAttribute="trailing" id="8UX-AV-1PY"/>
+                            <constraint firstItem="QEL-AG-C1K" firstAttribute="trailing" secondItem="cAo-px-80u" secondAttribute="trailing" id="EAF-y3-a1C"/>
+                            <constraint firstItem="FR8-Re-8aJ" firstAttribute="top" secondItem="cAo-px-80u" secondAttribute="bottom" constant="8" symbolic="YES" id="K23-vc-azP"/>
+                            <constraint firstItem="cAo-px-80u" firstAttribute="leading" secondItem="erl-jK-oKX" secondAttribute="leading" constant="16" id="MZY-B0-vd9"/>
+                            <constraint firstItem="erl-jK-oKX" firstAttribute="trailing" secondItem="cAo-px-80u" secondAttribute="trailing" constant="16" id="SjI-Yq-Zoy"/>
+                            <constraint firstItem="QEL-AG-C1K" firstAttribute="leading" secondItem="cAo-px-80u" secondAttribute="leading" id="Z5X-Jn-yvl"/>
+                            <constraint firstItem="FR8-Re-8aJ" firstAttribute="centerX" secondItem="cAo-px-80u" secondAttribute="centerX" id="ZG7-Rq-0Oh"/>
+                            <constraint firstItem="FR8-Re-8aJ" firstAttribute="leading" secondItem="cAo-px-80u" secondAttribute="leading" id="dA2-e0-SPQ"/>
+                            <constraint firstItem="erl-jK-oKX" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QEL-AG-C1K" secondAttribute="bottom" constant="8" id="dGF-3n-Thp"/>
+                            <constraint firstItem="cAo-px-80u" firstAttribute="top" secondItem="erl-jK-oKX" secondAttribute="top" id="eBw-lc-ATN"/>
+                            <constraint firstItem="p0Z-34-rq5" firstAttribute="top" secondItem="FR8-Re-8aJ" secondAttribute="bottom" constant="20" id="efd-uw-Yms"/>
+                            <constraint firstItem="p0Z-34-rq5" firstAttribute="trailing" secondItem="FR8-Re-8aJ" secondAttribute="trailing" id="yOp-HD-nLO"/>
+                            <constraint firstItem="p0Z-34-rq5" firstAttribute="leading" secondItem="FR8-Re-8aJ" secondAttribute="leading" id="zLC-UU-akv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Статья" largeTitleDisplayMode="never" id="Tqn-hM-LWt"/>
+                    <connections>
+                        <outlet property="newsHeadlineLabel" destination="p0Z-34-rq5" id="el1-5A-bZ4"/>
+                        <outlet property="newsImageView" destination="cAo-px-80u" id="wEr-EK-sIw"/>
+                        <outlet property="newsLikeImageView" destination="HgY-GQ-7ai" id="eI1-U3-jqn"/>
+                        <outlet property="newsPublicationDateLabel" destination="ydr-47-1OQ" id="cE2-Qs-jY4"/>
+                        <outlet property="newsTextLabel" destination="QEL-AG-C1K" id="QsI-SR-e0g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VmO-33-SWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1696.9465648854962" y="13.380281690140846"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GfQ-eZ-See">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lvr-W4-eye" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="sf6-3o-D1P">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="w0C-NS-jBq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Xs-IM-xlg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-164.12213740458014" y="13.380281690140846"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
