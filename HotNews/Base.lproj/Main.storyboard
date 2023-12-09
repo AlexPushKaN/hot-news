@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I00-cv-Vgy">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Db-kP-zQh">
                                     <size key="itemSize" width="372" height="392"/>
@@ -107,16 +107,15 @@
                             <constraint firstItem="I00-cv-Vgy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aEZ-Ls-BE2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Новости" id="SV0-M4-877">
-                        <barButtonItem key="backBarButtonItem" title=" " id="qwL-Ws-rCz"/>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Новости" image="globe" catalog="system" id="jSn-gW-0CA"/>
+                    <navigationItem key="navigationItem" title="Новости" id="SV0-M4-877"/>
                     <connections>
                         <outlet property="newsCollectionView" destination="I00-cv-Vgy" id="xZk-DP-cjB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1674" y="-8"/>
+            <point key="canvasLocation" x="740" y="-8"/>
         </scene>
         <!--Статья-->
         <scene sceneID="dHT-SM-4HO">
@@ -191,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmO-33-SWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608" y="-8"/>
+            <point key="canvasLocation" x="1673" y="-8"/>
         </scene>
         <!--Вход-->
         <scene sceneID="Os5-zU-g09">
@@ -204,7 +203,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ajn-4s-xxF">
                                 <rect key="frame" x="19" y="174" width="355" height="98.333333333333314"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Почта" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zkc-xX-A0K">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@mail.ru" borderStyle="roundedRect" placeholder="Почта" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zkc-xX-A0K">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="njn-Zw-gUp"/>
@@ -213,7 +212,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gkJ-ly-wr7">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gkJ-ly-wr7">
                                         <rect key="frame" x="0.0" y="52" width="355" height="46.333333333333343"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -285,7 +284,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Вход" id="zdO-Vs-duR">
-                        <barButtonItem key="backBarButtonItem" title=" " id="VR6-Hu-4St"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="opV-HV-7BJ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="zkc-xX-A0K" id="ppo-3R-5hL"/>
@@ -300,13 +299,14 @@
         <scene sceneID="vvp-iM-WzG">
             <objects>
                 <tabBarController storyboardIdentifier="mainTabBarController" id="X6M-ha-Ej0" customClass="MainTabBarController" customModule="HotNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="avZ-Df-IbK"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DC6-Kt-FYR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="lvr-W4-eye" kind="relationship" relationship="viewControllers" id="8jG-RT-ByA"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="2X7-01-JOB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uV7-yF-W1s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -477,25 +477,6 @@
                 <exit id="j0t-FH-tbn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1673" y="-747"/>
-        </scene>
-        <!--Новости-->
-        <scene sceneID="GfQ-eZ-See">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lvr-W4-eye" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Новости" image="globe" catalog="system" id="OeP-Jm-owx"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="sf6-3o-D1P">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="w0C-NS-jBq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Xs-IM-xlg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="747" y="-8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9NV-lb-JD3">

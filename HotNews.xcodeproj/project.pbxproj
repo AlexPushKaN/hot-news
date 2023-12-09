@@ -157,9 +157,9 @@
 			children = (
 				4D21000B2B23970800A56AE6 /* Authorization */,
 				4D3D75F72B237DF30042A548 /* MainTabBarController.swift */,
-				4D3D75FB2B238A8B0042A548 /* UserProfileViewController.swift */,
 				4D289CF62B1F01D400617422 /* ListNewsViewController.swift */,
 				4D3D75E42B207E9B0042A548 /* SelectNewsViewController.swift */,
+				4D3D75FB2B238A8B0042A548 /* UserProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

@@ -29,6 +29,12 @@ class AuthorizationViewController: UIViewController {
         return emailPredicate.evaluate(with: email)
     }
     
+    private func showMainTabBarController() {
+
+        let tabBarController = storyboard?.instantiateViewController(withIdentifier: "mainTabBarController") as! MainTabBarController
+        navigationController?.pushViewController(tabBarController, animated: true)
+    }
+    
     @IBAction func entranceButtonPressed() {
         
         guard let email = emailTextField.text, !email.isEmpty else {
@@ -64,13 +70,6 @@ class AuthorizationViewController: UIViewController {
 
         let controller = storyboard?.instantiateViewController(withIdentifier: "resetPasswordViewController") as! ResetPasswordViewController
         navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    func showMainTabBarController() {
-
-        if let tabBarController = storyboard?.instantiateViewController(withIdentifier: "mainTabBarController") as? UITabBarController {
-            UIApplication.shared.windows.first?.rootViewController = tabBarController
-        }
     }
     
     @IBAction func unwindToAuthorizationController(_ sender: UIStoryboardSegue) {}

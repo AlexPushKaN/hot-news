@@ -43,7 +43,7 @@ class ListNewsViewController: UIViewController {
     }
 }
 
-//MARK: Method of obtaining and caching images for cells
+//MARK: - Method of obtaining and caching images for cells
 extension ListNewsViewController {
     
     private func getImage(from urlString: String, by indexPath: IndexPath, inObject: UICollectionView) -> UIImage {
@@ -77,7 +77,7 @@ extension ListNewsViewController {
     }
 }
 
-//MARK: UICollectionViewDataSource
+//MARK: - UICollectionViewDataSource
 extension ListNewsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return news.count }
@@ -91,7 +91,7 @@ extension ListNewsViewController: UICollectionViewDataSource {
     }
 }
 
-//MARK: UICollectionViewDelegate
+//MARK: - UICollectionViewDelegate
 extension ListNewsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

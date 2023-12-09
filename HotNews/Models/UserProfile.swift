@@ -56,7 +56,7 @@ class UserProfile {
         id = ""
         name = ""
         email = ""
-        photo = ""
+        photo = "userPhoto"
         password = ""
         
         save()
