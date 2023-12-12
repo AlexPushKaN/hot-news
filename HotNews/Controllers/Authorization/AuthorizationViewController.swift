@@ -16,21 +16,17 @@ class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         userProfile.load()
         hideKeyboardWhenTappedAround()
     }
     
     private func isValidEmail(_ email: String) -> Bool {
-
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        
         return emailPredicate.evaluate(with: email)
     }
     
     private func showMainTabBarController() {
-
         let tabBarController = storyboard?.instantiateViewController(withIdentifier: "mainTabBarController") as! MainTabBarController
         navigationController?.pushViewController(tabBarController, animated: true)
     }
@@ -38,19 +34,16 @@ class AuthorizationViewController: UIViewController {
     @IBAction func entranceButtonPressed() {
         
         guard let email = emailTextField.text, !email.isEmpty else {
-
             present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите email."), animated: true)
             return
         }
         
         guard isValidEmail(email) else {
-
             present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите корректный email."), animated: true)
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty else {
-            
             present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите пароль."), animated: true)
             return
         }
@@ -61,13 +54,11 @@ class AuthorizationViewController: UIViewController {
     
     
     @IBAction func registerButtonPressed() {
-
         let controller = storyboard?.instantiateViewController(withIdentifier: "registrationViewController") as! RegistrationViewController
         navigationController?.pushViewController(controller, animated: true)
     }
     
     @IBAction func passwordResetButtonPressed() {
-
         let controller = storyboard?.instantiateViewController(withIdentifier: "resetPasswordViewController") as! ResetPasswordViewController
         navigationController?.pushViewController(controller, animated: true)
     }

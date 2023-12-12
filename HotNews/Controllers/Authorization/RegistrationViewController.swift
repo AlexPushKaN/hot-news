@@ -16,41 +16,34 @@ class RegistrationViewController: UIViewController {
     let userProfile = UserProfile.shared
     
     private func isValidEmail(_ email: String) -> Bool {
-
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        
         return emailPredicate.evaluate(with: email)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         hideKeyboardWhenTappedAround()
     }
     
     @IBAction func registerButtonPressed() {
         
         guard let name = loginTextField.text, !name.isEmpty else {
-
             present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите имя."), animated: true)
             return
         }
         
         guard let email = emailTextField.text, !email.isEmpty else {
-
             present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите email."), animated: true)
             return
         }
         
         guard isValidEmail(email) else {
-
             present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите корректный email."), animated: true)
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty else {
-            
             present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите пароль."), animated: true)
             return
         }

@@ -15,8 +15,11 @@ class MainTabBarController: UITabBarController {
         navigationItem.hidesBackButton = true
         navigationItem.title = "Новости"
         
+        guard let controllers = viewControllers else { return }
+        for (index, controller) in controllers.enumerated() { controller.tabBarItem.tag = index }
+        
         let userProfileViewController = UserProfileViewController()
-        userProfileViewController.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person"), tag: 1)
+        userProfileViewController.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person"), tag: controllers.count)
         
         viewControllers?.append(userProfileViewController)
     }
@@ -30,7 +33,10 @@ extension MainTabBarController: UITabBarControllerDelegate {
         switch item.tag {
             
         case 0: navigationItem.title = "Новости"
-        case 1: navigationItem.title = "Профиль"
+        case 1: navigationItem.title = "Избранное"
+        case 2: navigationItem.title = "Карта"
+        case 3: navigationItem.title = "Профиль"
+
         default: break
         }
     }

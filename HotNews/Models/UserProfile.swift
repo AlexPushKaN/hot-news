@@ -18,7 +18,6 @@ class UserProfile {
     static let shared = UserProfile()
 
     private init() {
-        
         id = UUID().uuidString
         name = ""
         email = "test@mail.ru"
@@ -27,7 +26,6 @@ class UserProfile {
     }
 
     func save() {
-        
         let profileData: [String: Any] = [
             "id": id,
             "name": name,
@@ -39,7 +37,6 @@ class UserProfile {
     }
 
     func load() {
-        
         if let profileData = UserDefaults.standard.dictionary(forKey: "userProfile") {
             id = profileData["id"] as? String ?? ""
             name = profileData["name"] as? String ?? ""
@@ -49,16 +46,8 @@ class UserProfile {
         }
     }
     
-    func delete() {
-        
-        UserDefaults.standard.removeObject(forKey: "userProfile")
-
-        id = ""
-        name = ""
-        email = ""
-        photo = "userPhoto"
-        password = ""
-        
+    func resetPassword() {
+        password = "12345"
         save()
     }
 }

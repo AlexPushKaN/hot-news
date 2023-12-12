@@ -12,9 +12,7 @@ class ResetPasswordViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     let userProfile = UserProfile.shared
-
     private func isValidEmail(_ email: String) -> Bool {
-
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailPredicate.evaluate(with: email)
@@ -22,7 +20,6 @@ class ResetPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         userProfile.load()
         hideKeyboardWhenTappedAround()
     }
@@ -30,26 +27,21 @@ class ResetPasswordViewController: UIViewController {
     @IBAction func passwordResetButtonPressed() {
         
         guard let email = emailTextField.text, !email.isEmpty else {
-
             present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите email."), animated: true)
             return
         }
         
         guard isValidEmail(email) else {
-
             present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите корректный email."), animated: true)
             return
         }
         
         if emailTextField.text == userProfile.email {
-            
-            userProfile.delete()
-            present(AlertController.showAlert(type: .warning, message: "Ваши данные безвозвратно удалены.", completionHandler: {
-                
+            userProfile.resetPassword()
+            present(AlertController.showAlert(type: .warning, message: "Ваш пароль сброшен.", completionHandler: {
                 self.navigationController?.popViewController(animated: true)
             }), animated: true)
         } else {
-            
             present(AlertController.showAlert(type: .error, message: "Введен неверный email."), animated: true)
         }
     }

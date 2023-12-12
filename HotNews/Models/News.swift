@@ -9,6 +9,7 @@ import Foundation
 
 struct News: Hashable {
     
+    var id: String
     let title: String
     let url: String
     let urlToImage: String
