@@ -89,7 +89,7 @@ extension ListNewsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "selectNewsViewController") as! SelectNewsViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "detailNewsViewController") as! DetailNewsViewController
         controller.news = news[indexPath.item]
         controller.picture = cachedDataSourse.object(forKey: news[indexPath.item].id as AnyObject)
         navigationController?.pushViewController(controller, animated: true)

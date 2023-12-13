@@ -21,7 +21,7 @@ class NewsMaker {
                                 title: news.title ?? "Без названия",
                                 url: news.url ?? "Без источника",
                                 urlToImage: news.urlToImage ?? "Без картинки",
-                                publishedAt: news.publishedAt ?? "Без даты публикации",
+                                publishedAt: self.converter(dateString: news.publishedAt ?? ""),
                                 content: news.content ?? "Без контента",
                                 isLiked: false)
                 self.favoriteNews.forEach { [weak self] favoriteNews in
@@ -56,5 +56,13 @@ class NewsMaker {
                         content: content,
                         isLiked: true)
         }
+    }
+    
+    private func converter(dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        guard let date = dateFormatter.date(from: dateString) else { return "Без даты публикации"}
+        dateFormatter.dateFormat = "dd MMMM"
+        return dateFormatter.string(from: date)
     }
 }

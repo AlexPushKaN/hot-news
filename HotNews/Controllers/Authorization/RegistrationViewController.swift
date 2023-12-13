@@ -34,12 +34,12 @@ class RegistrationViewController: UIViewController {
         }
         
         guard let email = emailTextField.text, !email.isEmpty else {
-            present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите email."), animated: true)
+            present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите почту."), animated: true)
             return
         }
         
         guard isValidEmail(email) else {
-            present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите корректный email."), animated: true)
+            present(AlertController.showAlert(type: .error, message: "Пожалуйста, проверьте корректность ввода почты."), animated: true)
             return
         }
         

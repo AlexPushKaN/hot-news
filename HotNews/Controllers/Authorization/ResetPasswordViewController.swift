@@ -27,22 +27,22 @@ class ResetPasswordViewController: UIViewController {
     @IBAction func passwordResetButtonPressed() {
         
         guard let email = emailTextField.text, !email.isEmpty else {
-            present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите email."), animated: true)
+            present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите почту."), animated: true)
             return
         }
         
         guard isValidEmail(email) else {
-            present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите корректный email."), animated: true)
+            present(AlertController.showAlert(type: .error, message: "Пожалуйста, проверьте корректность ввода почты."), animated: true)
             return
         }
         
         if emailTextField.text == userProfile.email {
             userProfile.resetPassword()
-            present(AlertController.showAlert(type: .warning, message: "Ваш пароль сброшен.", completionHandler: {
+            present(AlertController.showAlert(type: .successfully, message: "Инструкция по сбросу пароля придет Вам на почту.", completionHandler: {
                 self.navigationController?.popViewController(animated: true)
             }), animated: true)
         } else {
-            present(AlertController.showAlert(type: .error, message: "Введен неверный email."), animated: true)
+            present(AlertController.showAlert(type: .error, message: "Введена неверная почта."), animated: true)
         }
     }
 }

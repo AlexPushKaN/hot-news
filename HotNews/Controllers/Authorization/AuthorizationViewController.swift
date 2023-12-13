@@ -34,12 +34,12 @@ class AuthorizationViewController: UIViewController {
     @IBAction func entranceButtonPressed() {
         
         guard let email = emailTextField.text, !email.isEmpty else {
-            present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите email."), animated: true)
+            present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите почту."), animated: true)
             return
         }
         
         guard isValidEmail(email) else {
-            present(AlertController.showAlert(type: .error, message: "Пожалуйста, введите корректный email."), animated: true)
+            present(AlertController.showAlert(type: .error, message: "Пожалуйста, проверьте корректность ввода почты."), animated: true)
             return
         }
         
@@ -49,7 +49,7 @@ class AuthorizationViewController: UIViewController {
         }
         
         if emailTextField.text == userProfile.email && passwordTextField.text == userProfile.password { showMainTabBarController() }
-        else { present(AlertController.showAlert(type: .error, message: "Неправильная почта или пароль"), animated: true) }
+        else { present(AlertController.showAlert(type: .error, message: "Указана неверная почта или пароль."), animated: true) }
     }
     
     

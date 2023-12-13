@@ -104,8 +104,7 @@ class UserProfileViewController: UIViewController {
     
     @objc func backToAuthorizationViewController() {
         
-        present(AlertController.showAlert(type: .warning, message: "Выход на вкладку авторизации.", completionHandler: {
-            
+        present(AlertController.showAlert(type: .exit, message: "Вы уверены, что хотите выйти из аккаунта?", completionHandler: {
             self.navigationController?.popToRootViewController(animated: true)
         }), animated: true)
     }

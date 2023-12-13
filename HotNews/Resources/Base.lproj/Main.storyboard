@@ -121,7 +121,7 @@
         <!--Статья-->
         <scene sceneID="dHT-SM-4HO">
             <objects>
-                <viewController storyboardIdentifier="selectNewsViewController" id="aCp-4d-OlO" customClass="SelectNewsViewController" customModule="HotNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailNewsViewController" id="aCp-4d-OlO" customClass="DetailNewsViewController" customModule="HotNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x39-f2-ANg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +204,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ajn-4s-xxF">
                                 <rect key="frame" x="19" y="174" width="355" height="98.333333333333314"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@mail.ru" borderStyle="roundedRect" placeholder="Почта" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zkc-xX-A0K">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Почта" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zkc-xX-A0K">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="njn-Zw-gUp"/>
@@ -213,7 +213,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gkJ-ly-wr7">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gkJ-ly-wr7">
                                         <rect key="frame" x="0.0" y="52" width="355" height="46.333333333333343"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -299,14 +299,18 @@
         <!--Карта-->
         <scene sceneID="6cl-Lw-AAw">
             <objects>
-                <viewController id="fp0-gM-hGe" sceneMemberID="viewController">
+                <viewController id="fp0-gM-hGe" customClass="MapViewController" customModule="HotNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fvj-1n-LOS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" rotateEnabled="NO" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WwV-dd-jml">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" rotateEnabled="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WwV-dd-jml">
                                 <rect key="frame" x="16" y="59" width="361" height="710"/>
-                                <hybridMapConfiguration key="preferredConfiguration" elevationStyle="realistic" showsTraffic="YES"/>
+                                <hybridMapConfiguration key="preferredConfiguration" elevationStyle="realistic">
+                                    <pointOfInterestFilter key="pointOfInterestFilter">
+                                        <includedCategories/>
+                                    </pointOfInterestFilter>
+                                </hybridMapConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -324,6 +328,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Карта" image="map" catalog="system" id="m8K-d5-gTd"/>
+                    <connections>
+                        <outlet property="mapView" destination="WwV-dd-jml" id="851-MR-7f7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IcE-yv-s7x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
