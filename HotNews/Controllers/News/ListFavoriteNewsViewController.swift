@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol UpdateListFavoriteNewsDelegate {
+protocol UpdateListFavoriteNewsDelegate: AnyObject {
     
     var favoriteNews: [News] { get set }
 }

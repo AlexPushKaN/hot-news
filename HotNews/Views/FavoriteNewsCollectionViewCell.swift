@@ -16,7 +16,7 @@ class FavoriteNewsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var newsTextLabel: UILabel!
     
     var news: News!
-    var delegate: UpdateListFavoriteNewsDelegate?
+    weak var delegate: UpdateListFavoriteNewsDelegate?
     
     func configure(news: News, listFavoriteNews: UpdateListFavoriteNewsDelegate) {
         layer.cornerRadius = 10.0
